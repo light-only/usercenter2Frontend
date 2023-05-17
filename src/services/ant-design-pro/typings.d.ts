@@ -3,24 +3,18 @@
 
 declare namespace API {
   type CurrentUser = {
-    name?: string;
-    avatar?: string;
-    userid?: string;
+    userName?: string;
+    avatarUrl?: string;
+    id?: string;
     email?: string;
-    signature?: string;
-    title?: string;
-    group?: string;
-    tags?: { key?: string; label?: string }[];
-    notifyCount?: number;
-    unreadCount?: number;
-    country?: string;
-    access?: string;
-    geographic?: {
-      province?: { label?: string; key?: string };
-      city?: { label?: string; key?: string };
-    };
-    address?: string;
     phone?: string;
+    profile?: string;
+    gender?: number;
+    tags?:string;
+    userAccount?: string;
+    userStatus?: number;
+    createTime?: string;
+    userRole?: number;
   };
 
   type LoginResult = {
@@ -78,6 +72,16 @@ declare namespace API {
     userAccount?: string;
     userPassword?: string;
     checkPassword?:string;
+  }
+
+  /**
+   * 通用返回类
+   */
+  type BaseResponse<T> = {
+    code:number,
+    data:T,
+    message:string,
+    description:string
   }
 
   type ErrorResponse = {

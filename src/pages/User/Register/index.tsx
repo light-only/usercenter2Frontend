@@ -125,6 +125,25 @@ export default () => {
                   },
                 ]}
               />
+              <ProFormText
+                name="planetCode"
+                fieldProps={{
+                  size: 'large',
+                  prefix: <UserOutlined className={'prefixIcon'} />,
+                }}
+                placeholder={'请输入唯一编码'}
+                rules={[
+                  {
+                    max:5,
+                    type:'string',
+                    message:'编号长度不能大于5'
+                  },
+                  {
+                    required: true,
+                    message: '编号不能为空!',
+                  },
+                ]}
+              />
             </>
           )}
           <div

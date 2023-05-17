@@ -125,18 +125,17 @@ const Login: React.FC = () => {
   const handleSubmit = async (values: API.LoginParams) => {
     try {
       // 登录
-      const user = await login({ ...values, type });
-      if (user) {
+      const res = await login({ ...values, type });
+      if (res?.data) {
         const defaultLoginSuccessMessage = '登录成功！';
         message.success(defaultLoginSuccessMessage);
         await fetchUserInfo();
         // const urlParams = new URL(window.location.href).searchParams;
-        history.push( '/user/register');
+        history.push( '/welcome');
         return;
       }
-      console.log(user);
       // 如果失败去设置用户错误信息
-      setUserLoginState(user);
+      setUserLoginState(res?.data);
     } catch (error) {
       const defaultLoginFailureMessage = '登录失败，请重试！';
       console.log(error);

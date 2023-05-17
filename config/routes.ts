@@ -28,6 +28,18 @@ export default [
     ],
   },
   {
+    path: '/admin',
+    layout: true,
+    name:'用户管理页',
+    routes: [
+      {
+        name: '用户管理',
+        path: '/admin/user-manage',
+        component: './Admin/UserManger',
+      }
+    ],
+  },
+  {
     path: '/welcome',
     name: 'welcome',
     icon: 'smile',
