@@ -123,7 +123,7 @@ export default () => {
       // @ts-ignore
       request={async (params = {}, sort, filter) => {
         const res = await getSearchUsers();
-        const userList = res?.data;
+        const userList = res;
         return {
           data:userList
         }
