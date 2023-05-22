@@ -14,7 +14,7 @@ const request = extend({
   // 默认请求是否带上cookie
   credentials: 'include',
   //配置不同环境下请求接口的路径：只需要配置production就可以了，本地的话走代理
-  prefix:process.env.NODE_ENV === 'production'?'http://user-backend.code-nav.cn':undefined
+  prefix:process.env.NODE_ENV === 'production'?'http://121.40.32.60':undefined
 });
 
 

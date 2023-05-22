@@ -6,9 +6,6 @@ import { useRef } from 'react';
 import {getSearchUsers} from "@/services/ant-design-pro/api";
 import moment from "moment";
 
-
-// @ts-ignore
-// @ts-ignore
 const columns: ProColumns<API.CurrentUser>[] = [
   {
     dataIndex: 'index',
